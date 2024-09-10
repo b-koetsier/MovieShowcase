@@ -1,8 +1,6 @@
 <script lang="ts">
     import Carousel from 'svelte-carousel'	
     import { writableArray } from '../../stores';
-    
-        
 </script>
 
 <main>
@@ -12,10 +10,11 @@
     autoplay
     autoplayDuration={5000}
     >
+    
         {#each $writableArray as item}
         <ul>
             <li class="poster">
-                <img src={item.Poster}/>
+                <img alt="poster" src={item.Poster}/>
             </li>
             <div id="moviedesc">
                     <li style='font-size:70px'>
@@ -28,16 +27,16 @@
                     {item.Plot}
                     </li>
             </div>
-            
         </ul>
         {/each}
     </Carousel>
     {/if}
+    
 </main>
 
 <style>
     ul {
-        background: #e4e1c778;
+        background: white;
         margin: 0 auto;
         height:80vh;
         width:60vw;
@@ -46,10 +45,8 @@
         align-items: center;
     }
     li {
-        list-style-type:none;
-        
+        list-style-type:none;   
     }
-
     .poster {
         position: relative;
         width:auto;

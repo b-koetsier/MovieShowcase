@@ -47,9 +47,14 @@
         top:50px;
     }
     #test {
-        position:absolute;
-        margin-top:50px;
-        background: #7b7694;
-        padding:10px;
+        margin:2vw;
+        background: white;
+        width:30vw;
+        height:40vh;
+        text-align: center;
+        box-shadow: 10px 5px black;
+        text-decoration: none;
+        color: black;
+        align-content: center;
     }
 </style>
