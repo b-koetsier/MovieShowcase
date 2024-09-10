@@ -1,11 +1,6 @@
 <script lang="ts">
-    import { onMount } from 'svelte';
-	import type { PageData } from './$types';
-    import { replaceState } from '$app/navigation';
-    import Carousel from 'svelte-carousel'
-	
+    import Carousel from 'svelte-carousel'	
     import { writableArray } from '../../stores';
-	export let data: PageData;
     
         
 </script>
@@ -23,11 +18,11 @@
                 <img src={item.Poster}/>
             </li>
             <div id="moviedesc">
-                    <li>
+                    <li style='font-size:70px'>
                     {item.Title}
                     </li>
                     <li>
-                    {item.Year}
+                    {item.Year} -
                     </li>
                     <li>
                     {item.Plot}
@@ -42,34 +37,32 @@
 
 <style>
     ul {
-        box-shadow: 5px 10px #2a0000;
-        background: #7b7694;
+        background: #e4e1c778;
         margin: 0 auto;
-        border: solid white 1px;
         height:80vh;
         width:60vw;
+        display: grid;
+        grid-auto-flow: column;
+        align-items: center;
     }
     li {
-        list-style-type:none;    
+        list-style-type:none;
+        
     }
-
 
     .poster {
         position: relative;
-        width:60vw;
-        height:auto;
+        width:auto;
+        height:100%;
+        float:left;
+        align-content: center;
     }
     .poster img{
         position: relative;
-        width:30%;
-        height:auto;
-        margin:15px;
-        z-index: 1;
+        width:auto;;
+        height:90%;
     }
-    #moviedesc {
-        background-color: rgb(93, 87, 124);
-        opacity: 0.75;
-        z-index: 5;
+    #moviedesc {  
         width: 80%;
         height: auto;
         padding:10px;
