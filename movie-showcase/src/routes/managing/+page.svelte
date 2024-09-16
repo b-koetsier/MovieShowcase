@@ -6,8 +6,6 @@
     let Title;
     let Year;
     
-    let carouselDuration = $slideDuration;
-
 	async function addToArray() {
 		const response = await fetch('/managing', {
 			method: 'POST',
@@ -33,46 +31,44 @@
         writableArray.update(arr => {
         return arr.filter(m => m !== movie);
     });
-}
-        
+}  
 </script>
 
-    <div class=card> 
-        <!-- Call to add a movie -->
-        <p class="title">Add a movie</p>
-        <form on:submit={addToArray}>
-            Title: <input type="text" bind:value={Title}/>
-            Year: <input type="text" bind:value={Year} />
-            <input type="submit" value="Add"/>
-        </form>
+<div class=card> 
+    <!-- Submit to add a movie -->
+    <p class="title">Add a movie</p>
+    <form on:submit={addToArray}>
+        Title: <input type="text" bind:value={Title}/>
+        Year: <input type="text" bind:value={Year} />
+        <input type="submit" value="Add"/>
+    </form>
 
-        <!-- Movie Preview -->
-        <p class="title">Current Movies</p>
-        <div id="movielist">
-
-        <!-- Loop over fetched movies and show as item-->
-        {#each $writableArray as item}
-            <div id="movieitem">
-                <p>{item.Title}</p> <p>{item.Year}</p>
-                <button on:click={(event) => removeMovie(item)}>remove</button>
-            </div>
-        {/each}
+    <!-- Movie Preview -->
+    <!-- Loop over fetched movies and show as item-->
+    <p class="title">Current Movies</p>
+    <div id="movielist">
+    {#each $writableArray as item}
+        <div id="movieitem">
+            <p>{item.Title}</p> <p>{item.Year}</p>
+            <button on:click={(event) => removeMovie(item)}>remove</button>
         </div>
+    {/each}
     </div>
-    
-    <div class="card">
-        <p class="title">Settings</p>
-        <form class="form">
-            <div class="settingOption">
-                <p>Slide time:</p>
-                <input type="number" bind:value={$slideDuration}> Second(s)
-            </div>
-            <div class="settingOption">
-                <p>Amount of movies in a slide</p>
-                <input type="number" bind:value={$carouselItemCount}>
-            </div>
-        </form>
-    </div>
+</div>
+
+<div class="card">
+    <p class="title">Settings</p>
+    <form class="form">
+        <div class="settingOption">
+            <p>Slide time:</p>
+            <input type="number" bind:value={$slideDuration}> Second(s)
+        </div>
+        <div class="settingOption">
+            <p>Amount of movies to show</p>
+            <input type="number" bind:value={$carouselItemCount}>
+        </div>
+    </form>
+</div>
     
 <style>
     .card {

@@ -13,8 +13,7 @@
     }
 </script>
 
-<main>
-    {#if $writableArray.length >= 1} 
+{#if $writableArray.length >= 1} 
     <Carousel
     particlesToShow={$carouselItemCount}
     autoplay
@@ -25,28 +24,28 @@
     arrows={false}
     swiping={false}
     >
-        {#each $writableArray as item}
-        <div id="card">
-            <li id="poster">
-                <img alt="poster" src={item.Poster}/>
-            </li>
-            <div id="moviedescription">
-                    <li id="title">
-                    {item.Title}
-                    </li>
-                    <li>
-                    {item.Year} -
-                    </li>
-                    <li>
-                    {item.Plot}
-                    </li>
-            </div>
-            </div>
-        {/each}
-    </Carousel>
-    {/if}
+
+    {#each $writableArray as item}
+    <div id="card">
+        <li id="poster">
+            <img alt="poster" src={item.Poster}/>
+        </li>
+        <div id="moviedescription">
+                <li id="title">
+                {item.Title}
+                </li>
+                <li>
+                {item.Year} -
+                </li>
+                <li>
+                {item.Plot}
+                </li>
+        </div>
+    </div>
+    {/each}
     
-</main>
+</Carousel>
+{/if}
 
 <style>
     #card {
