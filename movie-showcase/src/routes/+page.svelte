@@ -1,6 +1,6 @@
 <div id="select">
-    <a class="option" href="/display"><div class="container"><h1>Display</h1></div></a>
-    <a class="option" href="/managing"><div class="container"><h1>Add Movies</h1></div></a>
+    <a class="option" href="/display"><h1>Display Movies</h1></a>
+    <a class="option" href="/managing"><h1>Admin Panel</h1></a>
 </div>
 
 <style>
@@ -15,14 +15,11 @@
     .option {
         background: white;
         width:30vw;
-        height:40vh;
-        text-align: center;
+        height:40vh;   
         box-shadow: 10px 5px black;
         text-decoration: none;
         color: black;
-    }
-    .container {
+        text-align: center;
         align-content: center;
-        height: 100%;
-    }    
+    }  
 </style>

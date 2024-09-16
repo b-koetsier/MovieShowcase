@@ -1,16 +1,32 @@
 <script lang="ts">
     import Carousel from 'svelte-carousel'	
     import { writableArray } from '../../stores';
+    import { slideDuration } from '../../stores';
+    import { carouselItemCount } from '../../stores';    
+    import { onMount } from "svelte";
+
+    onMount(checkSettings);
+
+    function checkSettings(){
+        if($slideDuration == 0 || $slideDuration == null) $slideDuration = 5;
+        if($carouselItemCount == 0 || $carouselItemCount == null) $carouselItemCount = 1;
+    }
 </script>
 
 <main>
     {#if $writableArray.length >= 1} 
     <Carousel
+    particlesToShow={$carouselItemCount}
     autoplay
-    autoplayDuration={5000}
+    autoplayDuration={0}
+    duration={$slideDuration * 1000}
+    timingFunction="linear"
+    dots={false}
+    arrows={false}
+    swiping={false}
     >
         {#each $writableArray as item}
-        <ul>
+        <div id="card">
             <li id="poster">
                 <img alt="poster" src={item.Poster}/>
             </li>
@@ -25,7 +41,7 @@
                     {item.Plot}
                     </li>
             </div>
-        </ul>
+            </div>
         {/each}
     </Carousel>
     {/if}
@@ -33,11 +49,11 @@
 </main>
 
 <style>
-    ul {
-        background: white;
+    #card {
+        background: rgb(198, 198, 198);
+        border: solid rgb(229, 229, 229) 3px;
         margin: 0 auto;
         height:80vh;
-        width:60vw;
         display: grid;
         grid-auto-flow: column;
         align-items: center;
@@ -48,21 +64,24 @@
     #poster {
         position: relative;
         width:auto;
-        height:100%;
+        height:70%;
         float:left;
         align-content: center;
     }
     #poster img{
+        margin:10px;
         position: relative;
         width:auto;;
-        height:90%;
+        height:auto;
     }
     #title {
-        font-size: 70px;
+        font-size: 30px;
+        word-wrap: break-word;
     }
     #moviedescription {  
-        width: 80%;
+        width: 100%;
         height: auto;
         padding:10px;
+        overflow-x: auto;
     }
 </style>
