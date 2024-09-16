@@ -1,5 +1,5 @@
 import { writable } from 'svelte/store';
 
-export const writableArray = writable([]);
-export const slideDuration = writable();
-export const carouselItemCount = writable();
+export const movieArray = writable([]);
+export const slideDuration = writable(5);
+export const carouselItemCount = writable(1);
