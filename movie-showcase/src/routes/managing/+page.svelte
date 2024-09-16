@@ -23,7 +23,7 @@
             Year: movie.Year,
             Plot: movie.Plot,
             Poster: movie.Poster,
-    }];
+    }])
 };
 </script>
 
@@ -44,9 +44,10 @@
     {#each $writableArray as item}
             <div id="movieitem">
                 <p>{item.Title}</p> <p>{item.Year}</p>
-                <button on:click={(event) => removeMovie(item)}>remove</button>
             </div>
     {/each}
+    </div>
+
 </div>
 
 <style>
