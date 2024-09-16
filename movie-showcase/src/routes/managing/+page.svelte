@@ -23,8 +23,14 @@
             Year: movie.Year,
             Plot: movie.Plot,
             Poster: movie.Poster,
-    }])
-};
+		}]);
+	}
+        function removeMovie(movie) {
+        writableArray.update(arr => {
+        return arr.filter(m => m !== movie);
+    });
+}
+        
 </script>
 
     <div class=card> 
@@ -44,6 +50,7 @@
     {#each $writableArray as item}
             <div id="movieitem">
                 <p>{item.Title}</p> <p>{item.Year}</p>
+                <button on:click={(event) => removeMovie(item)}>remove</button>
             </div>
     {/each}
     </div>
