@@ -4,20 +4,18 @@
 </script>
 
 <main>
-    
     {#if $writableArray.length >= 1} 
     <Carousel
     autoplay
     autoplayDuration={5000}
     >
-    
         {#each $writableArray as item}
         <ul>
-            <li class="poster">
+            <li id="poster">
                 <img alt="poster" src={item.Poster}/>
             </li>
-            <div id="moviedesc">
-                    <li style='font-size:70px'>
+            <div id="moviedescription">
+                    <li id="title">
                     {item.Title}
                     </li>
                     <li>
@@ -47,19 +45,22 @@
     li {
         list-style-type:none;   
     }
-    .poster {
+    #poster {
         position: relative;
         width:auto;
         height:100%;
         float:left;
         align-content: center;
     }
-    .poster img{
+    #poster img{
         position: relative;
         width:auto;;
         height:90%;
     }
-    #moviedesc {  
+    #title {
+        font-size: 70px;
+    }
+    #moviedescription {  
         width: 80%;
         height: auto;
         padding:10px;
