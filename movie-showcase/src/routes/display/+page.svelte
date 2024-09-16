@@ -63,11 +63,11 @@
     .title {
         font-size: 30px;
         word-wrap: break-word;
+        font-weight: bold;
     }
     .moviedescription {
         width: 100%;
         height: auto;
         padding: 10px;
-        overflow-x: auto;
     }
 </style>

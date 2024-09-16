@@ -1,6 +1,6 @@
 # MovieShowcase
 
-### This is a Svelte project. Follow the instructions below to set up the project on your local machine.
+### This project is a svelte.js narrowcasting single-page application that broadcasts movie data fetched from https://www.omdbapi.com/apikey.aspx, you'll need to request an API Key [here](https://www.omdbapi.com/apikey.aspx) and store it in an .env file after setting the project up
 
 ## Prerequisites
 Ensure you have the following installed on your machine:
@@ -38,7 +38,14 @@ Or, if you're using Yarn:
 ```console
 yarn install
 ```
-## Development
+
+## API Key
+
+To use the Application, you'll first need to create an .env file in the project root folder, you can use .env.example to format your .env file, or simply copy and rename it.
+
+After creating the .env file, insert the API Key you've requested from [OMDb API](https://www.omdbapi.com/apikey.aspx)
+
+## Run it
 To run the project locally in development mode, use the following command:
 
 ```console
@@ -51,15 +58,13 @@ yarn dev
 ```
 By default, it runs at http://localhost:5173.
 
+## Try it out
+After you've succesfully installed and booted up the project, you can try to add and display some movies.
 
+When you open the App, click on the "Admin Panel" box on the right side of the home page, under "Add a movie" add the title of your favorite movie and click add.
 
-## Build
-To build the project, run:
+Now, under "Current Movies" it should show the movie you listed with the Title, Year and a "Remove" button (You can click that to remove the movie, if you dont want it to display anymore.)
 
-```console
-npm run build
-```
-Or, with Yarn:
-``` console
-yarn build
-```
+Now when you click the "Home" button on the top left and click the "Display Movies" box on the left side of the home page, you'll see your movie in a carousel!
+
+To change the speed the carousel moves at or the amount of movies it shows, you can navigate back to the Admin Panel and under the second box "Settings" you can change those values.

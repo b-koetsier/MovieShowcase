@@ -1,10 +1,10 @@
-<div class="select">
+<div class="menu">
     <a class="option" href="/display"><h1>Display Movies</h1></a>
     <a class="option" href="/managing"><h1>Admin Panel</h1></a>
 </div>
 
 <style>
-    .select {
+    .menu {
         height: 100vh;
         display: grid;
         grid-auto-flow: column;

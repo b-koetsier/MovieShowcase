@@ -3,8 +3,8 @@
     import { slideDuration } from "../../stores";
     import { carouselItemCount } from "../../stores";
 
-    var Title: string;
-    let Year: string;
+    let title: string;
+    let year: string;
 
     async function addToArray() {
         const response = await fetch("/managing", {
@@ -13,8 +13,8 @@
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                title: Title,
-                year: Year,
+                title: title,
+                year: year,
             }),
         });
 
@@ -37,12 +37,12 @@
     }
 </script>
 
-<div class="card">
+<div class="card-small">
     <!-- Submit to add a movie -->
     <p class="title">Add a movie</p>
     <form on:submit={addToArray}>
-        Title: <input type="text" bind:value={Title} />
-        Year: <input type="text" bind:value={Year} />
+        Title: <input type="text" bind:value={title} />
+        Year: <input type="text" bind:value={year} />
         <input type="submit" value="Add" />
     </form>
 
@@ -60,14 +60,14 @@
     </div>
 </div>
 
-<div class="card">
+<div class="card-small">
     <p class="title">Settings</p>
     <form class="form">
-        <div class="settingOption">
+        <div class="setting">
             <p>Slide time:</p>
             <input type="number" bind:value={$slideDuration} /> Second(s)
         </div>
-        <div class="settingOption">
+        <div class="setting">
             <p>Amount of movies to show</p>
             <input type="number" bind:value={$carouselItemCount} />
         </div>
@@ -75,7 +75,7 @@
 </div>
 
 <style>
-    .card {
+    .card-small {
         margin: 2vw;
         background: white;
         width: 30vw;
@@ -93,7 +93,7 @@
         align-items: left;
         gap: 10px;
     }
-    .settingOption {
+    .setting {
         display: inline-flex;
         align-items: center;
         justify-content: left;
@@ -117,8 +117,12 @@
         padding: 10px;
         background: gray;
         color: white;
-        flex: 1 1 calc(100% / 3 - 20px); 
+        flex: 1 1 calc(100% / 3 - 20px);
         box-sizing: border-box;
-        max-width: 100%; 
+        max-width: 100%;
+    }
+    .title {
+        font-size: 20px;
+        font-weight: bold;
     }
 </style>
