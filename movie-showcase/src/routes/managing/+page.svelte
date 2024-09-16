@@ -5,13 +5,20 @@
     let Year;
 
 	async function addToArray() {
-        const response = await fetch(
-            'https://www.omdbapi.com/?t='+Title+'&y='+Year+'&apikey=ab9aee8f', {
-            method: 'GET'
+		const response = await fetch('/managing', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({
+				title: Title,
+				year: Year
+			})
         });
-        let movie = await response.json();      
+
+		const movie = await response.json();
  
-        $writableArray = [...$writableArray, {
+		writableArray.update(arr => [...arr, {
             Title: movie.Title,
             Year: movie.Year,
             Plot: movie.Plot,
@@ -20,27 +27,30 @@
 };
 </script>
 
-<div id=card>
-    Title: <input bind:value={Title} />
-    Year: <input bind:value={Year} />
-    <button id="add" on:click={addToArray}>
-        Add item
-    </button>
+    <div class=card> 
+        <!-- Call to add a movie -->
+        <p class="title">Add a movie</p>
+        <form on:submit={addToArray}>
+            Title: <input type="text" bind:value={Title}/>
+            Year: <input type="text" bind:value={Year} />
+            <input type="submit" value="Add"/>
+        </form>
 
     <!-- Movie Preview -->
+        <p class="title">Current Movies</p>
+        <div id="movielist">
+
+        <!-- Loop over fetched movies and show as item-->
     {#each $writableArray as item}
-        <p>
-            {item.Title}
-        </p>
+            <div id="movieitem">
+                <p>{item.Title}</p> <p>{item.Year}</p>
+                <button on:click={(event) => removeMovie(item)}>remove</button>
+            </div>
     {/each}
 </div>
 
 <style>
-    #add{
-        background-color: #80d249;
-        top:50px;
-    }
-    #card {
+    .card {
         margin:2vw;
         background: white;
         width:30vw;
