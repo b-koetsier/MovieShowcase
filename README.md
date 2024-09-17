@@ -44,6 +44,9 @@ yarn install
 To use the Application, you'll first need to create an .env file in the project root folder, you can use .env.example to format your .env file, or simply copy and rename it.
 
 After creating the .env file, insert the API Key you've requested from [OMDb API](https://www.omdbapi.com/apikey.aspx)
+```env
+API_KEY=abc12345 #replace the value with your own key
+```
 
 ## Run it
 To run the project locally in development mode, use the following command:
