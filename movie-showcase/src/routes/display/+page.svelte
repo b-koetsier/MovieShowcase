@@ -21,7 +21,7 @@
                 <div class="poster">
                     <img alt="poster" src={item.Poster} />
                 </div>
-                <div class="moviedescription">
+                <div class="movie-description">
                     <div class="title">
                         {item.Title}
                     </div>
@@ -65,7 +65,7 @@
         word-wrap: break-word;
         font-weight: bold;
     }
-    .moviedescription {
+    .movie-description {
         width: 100%;
         height: auto;
         padding: 10px;

@@ -1,4 +1,4 @@
-<a href="/" class="homebutton">Home</a>
+<a href="/" class="home-button">Home</a>
 <slot />
 
 <style>
@@ -11,7 +11,7 @@
         );
         color: rgb(0, 0, 0);
     }
-    .homebutton {
+    .home-button {
         background: rgb(210, 162, 162);
         border: solid black 1px;
         width: 10px;

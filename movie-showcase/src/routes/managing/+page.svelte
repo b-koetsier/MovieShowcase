@@ -49,9 +49,9 @@
     <!-- Movie Preview -->
     <!-- Loop over fetched movies and show as item-->
     <p class="title">Current Movies</p>
-    <div class="movielist">
+    <div class="movie-list">
         {#each $movieArray as item}
-            <div class="movieitem">
+            <div class="movie-item">
                 <p>{item.Title}</p>
                 <p>{item.Year}</p>
                 <button on:click={(event) => removeMovie(item)}>remove</button>
@@ -102,7 +102,7 @@
         gap: 2px;
         margin: 10px;
     }
-    .movielist {
+    .movie-list {
         display: flex;
         flex-wrap: wrap;
         justify-content: flex-start;
@@ -112,7 +112,7 @@
         height: 50%;
     }
 
-    .movieitem {
+    .movie-item {
         margin: 10px;
         padding: 10px;
         background: gray;
