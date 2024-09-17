@@ -14,12 +14,9 @@
     .home-button {
         background: rgb(210, 162, 162);
         border: solid black 1px;
-        width: 10px;
-        height: 10px;
         padding: 2px;
         text-decoration: none;
         color: black;
         text-align: center;
-        position: sticky;
     }
 </style>
