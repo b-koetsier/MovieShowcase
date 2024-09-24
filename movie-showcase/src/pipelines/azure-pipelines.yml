@@ -1,8 +1,9 @@
 trigger:
-  - releases/vnext
+  - develop
 
 pr:
-  - releases/vnext
+  - develop
+  - main
 
 pool:
   name: Default
