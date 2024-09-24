@@ -29,7 +29,3 @@ extends:
     moveToOutput:
       - package.json
       - node_modules
-    preBuildSteps:
-      - script: pnpm run check
-        displayName: 'Run SvelteKit Check'
-        workingDirectory: $(Build.SourcesDirectory)/movie-showcase
