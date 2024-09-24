@@ -23,7 +23,6 @@ extends:
     runtimeStack: 'NODE|20-lts'
     webAppName: 'movie-showcase'
     azureSubscription: 'Azure | Securancy Intelligence | movie-showcase'
-    environment: 'Development'
     moveToOutput:
       - package.json
       - node_modules
