@@ -14,6 +14,7 @@ resources:
       type: github
       name: securancy/azure-pipeline-templates
       endpoint: securancy
+
 extends:
   template: pnpm.yml@templates
   parameters:
@@ -28,3 +29,6 @@ extends:
     moveToOutput:
       - package.json
       - node_modules
+    preBuildSteps: |
+      - script: pnpm run check
+        displayName: 'Run SvelteKit Check'
