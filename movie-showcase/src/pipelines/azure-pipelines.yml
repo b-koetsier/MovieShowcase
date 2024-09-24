@@ -27,5 +27,6 @@ extends:
     azureSubscription: 'Azure | Securancy Intelligence | movie-showcase'
     environment: 'Development'    
     moveToOutput:
-      - package.json
-      - node_modules
+      - ./movie-showcase/package.json
+      - ./movie-showcase/node_modules
+    
