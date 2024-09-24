@@ -20,7 +20,7 @@ extends:
   parameters:
     nodeVersion: '20.x'
     buildScript: 'build'
-    outputFolder: './movie-showcase/.vercel/output/'
+    outputFolder: '.vercel/output/'
     runtimeStack: 'NODE|20-lts'
     appPath: './movie-showcase/'    
     webAppName: 'movie-showcase'
