@@ -18,7 +18,7 @@ extends:
   template: pnpm.yml@templates
   parameters:
     nodeVersion: '20.x'
-    buildScript: 'build:dev'
+    buildScript: 'build'
     outputFolder: 'dist'
     runtimeStack: 'NODE|20-lts'
     appPath: './movie-showcase/'    
