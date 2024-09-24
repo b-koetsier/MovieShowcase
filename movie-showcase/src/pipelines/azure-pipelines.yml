@@ -29,6 +29,6 @@ extends:
     moveToOutput:
       - package.json
       - node_modules
-    preBuildSteps: |
+    preBuildSteps:
       - script: pnpm run check
         displayName: 'Run SvelteKit Check'
