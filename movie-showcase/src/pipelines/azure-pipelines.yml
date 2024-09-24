@@ -1,0 +1,28 @@
+trigger:
+  - releases/vnext
+
+pr:
+  - releases/vnext
+
+pool:
+  name: Default
+
+resources:
+  repositories:
+    - repository: templates
+      type: github
+      name: securancy/azure-pipeline-templates
+      endpoint: securancy
+extends:
+  template: pnpm.yml@templates
+  parameters:
+    nodeVersion: '20.x'
+    buildScript: 'build:dev'
+    outputFolder: 'dist'
+    runtimeStack: 'NODE|20-lts'
+    webAppName: 'movie-showcase'
+    azureSubscription: 'Azure | Securancy Intelligence | movie-showcase'
+    environment: 'Development'
+    moveToOutput:
+      - package.json
+      - node_modules
