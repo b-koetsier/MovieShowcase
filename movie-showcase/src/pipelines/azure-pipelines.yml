@@ -20,13 +20,11 @@ extends:
   parameters:
     nodeVersion: '20.x'
     buildScript: 'build'
-    outputFolder: 'dist'
+    outputFolder: './movie-showcase/.vercel/output/'
     runtimeStack: 'NODE|20-lts'
     appPath: './movie-showcase/'    
     webAppName: 'movie-showcase'
     azureSubscription: 'Azure | Securancy Intelligence | movie-showcase'
     environment: 'Development'    
-    moveToOutput:
-      - package.json
-      - node_modules
+
     
