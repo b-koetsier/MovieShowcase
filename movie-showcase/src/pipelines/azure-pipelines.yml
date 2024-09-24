@@ -1,5 +1,5 @@
 trigger:
-  - develop
+  - main
 
 pr:
   - develop
@@ -27,6 +27,6 @@ extends:
     azureSubscription: 'Azure | Securancy Intelligence | movie-showcase'
     environment: 'Development'    
     moveToOutput:
-      - ./movie-showcase/package.json
-      - ./movie-showcase/node_modules
+      - package.json
+      - node_modules
     
