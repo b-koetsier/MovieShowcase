@@ -21,6 +21,7 @@ extends:
     buildScript: 'build:dev'
     outputFolder: 'dist'
     runtimeStack: 'NODE|20-lts'
+    appPath: './movie-showcase'    
     webAppName: 'movie-showcase'
     azureSubscription: 'Azure | Securancy Intelligence | movie-showcase'
     environment: 'Development'    
