@@ -1,8 +1,9 @@
 trigger:
-  - releases/vnext
+  - develop
 
 pr:
-  - releases/vnext
+  - develop
+  - main
 
 pool:
   name: Default
@@ -22,7 +23,7 @@ extends:
     runtimeStack: 'NODE|20-lts'
     webAppName: 'movie-showcase'
     azureSubscription: 'Azure | Securancy Intelligence | movie-showcase'
-    environment: 'Development'
+    environment: 'Development'    
     moveToOutput:
       - package.json
       - node_modules
