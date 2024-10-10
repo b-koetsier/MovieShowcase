@@ -19,7 +19,10 @@
         });
 
         const movie = await response.json();
-
+        if (movie.message == "Movie not found") {
+            title = movie.message;
+            return;
+        }
         movieArray.update((arr) => [
             ...arr,
             {
