@@ -1,12 +1,6 @@
 import { writable } from 'svelte/store';
 import type { Writable } from 'svelte/store';
-
-export type Movie = {
-    Title: string;
-    Year: number;
-    Plot: string;
-    Poster: string;
-}
+import type { Movie } from './models/movie';
 
 export const movieArray: Writable<Movie[]> = writable([]);
 
